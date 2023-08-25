@@ -1,34 +1,13 @@
-include(FetchContent)
 
-# GTest -----------------
-FetchContent_Declare(gtest
-  GIT_REPOSITORY "https://github.com/google/googletest"
-  GIT_TAG "origin/main"
-  SOURCE_DIR "${CMAKE_BINARY_DIR}/_deps/gtest"
-)
-# set(EXAMPLES OFF CACHE INTERNAL "Dont build examples")
-FetchContent_MakeAvailable(gtest)
-if(gtest_POPULATED)
-    message(STATUS "=> Found gtest")
-else()
-    message(STATUS "*** Didn't find gtest")
-endif()
-
-#----------------------------
 enable_testing()
 
-list(APPEND prj-gtests
-    main
+list(APPEND gtests
+    test1.cpp
+    test2.cpp
 )
 
-# message(STATUS "gTests ----------------------")
-foreach(name ${prj-gtests})
-    add_executable(${name} ${name}.cpp)
-    target_link_libraries(${name}
-        GTest::gtest_main
-        ${PROJECT_NAME})
-    add_test(NAME ${name} COMMAND ${name})
-endforeach()
-
+# run all tests
+add_executable(test-all ${gtests})
+target_link_libraries(test-all GTest::gtest_main ${PROJECT_NAME})
 include(GoogleTest)
-gtest_discover_tests(${prj-gtests})
+gtest_discover_tests(test-all)
