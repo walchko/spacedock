@@ -44,6 +44,11 @@ list(APPEND libs library1 library2)
 
 FetchContent_MakeAvailable( ${libs} )
 
+
+if (UNIX OR APPLE OR linux)
+    message(STATUS "something")
+endif()
+
 add_library(${PROJECT_NAME} INTERFACE)
 target_include_directories(${PROJECT_NAME} INTERFACE src/)
 target_link_libraries(${PROJECT_NAME} INTERFACE library1 library2 ... ) # don't add gtest here
