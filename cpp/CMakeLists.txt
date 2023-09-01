@@ -27,7 +27,8 @@ if(PROJECT_IS_TOP_LEVEL)
     set(BUILD_GTESTS ON)
 
     # GTest -----------------
-    FetchContent_Declare(gtest
+    FetchContent_Declare(
+        gtest
         # GIT_REPOSITORY "https://github.com/google/googletest"
         # GIT_TAG "origin/main"
         URL https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip
@@ -42,7 +43,7 @@ endif()
 # if other fetched content, append them to libs too
 list(APPEND libs library1 library2)
 
-FetchContent_MakeAvailable( ${libs} )
+FetchContent_MakeAvailable( ${libs} ) # only call this once with all libs
 
 
 if (UNIX OR APPLE OR linux)
