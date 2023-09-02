@@ -5,5 +5,5 @@ list(APPEND examples
 # message(STATUS "Examples ----------------------")
 foreach(app ${examples})
     add_executable(${app} ${app}.cpp)
-    target_link_libraries(${app} ${PROJECT_NAME})
+    target_link_libraries(${app} INTERFACE ${PROJECT_NAME})
 endforeach()
