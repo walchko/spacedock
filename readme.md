@@ -14,7 +14,7 @@
 ## Tools
 
 ```
-spacedock --yaml [cpp|python] --build [cpp|python] --help
+spacedock --yaml --build yaml_file --help
 ```
 
 
