@@ -25,9 +25,23 @@ def gen_yaml():
     data = {
         "project": "full name",
         "author": "author name",
-        "year": dt.date.today().year
-        "license": "license type: MIT"
+        "year": dt.date.today().year,
+        "license": "license type: MIT",
+        "repo": "url",
+        "python": {
+            "version": "0.0.0",
+            "pyversions": ["3.13"],
+            "modules": [],
+        },
+        "cpp": {
+            "version": "0.0.0",
+        },
+        "pico": {
+            "version": "0.0.0",
+            "picolibs": []
+        },
     }
+
     with open("project.yaml", "w") as f:
         yaml.dump(data, f)
 
