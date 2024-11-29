@@ -6,8 +6,14 @@
 - cpp
     - `CMakeLists.txt`
     - examples
+        - `CMakeLists.txt`
+        - `example.cpp`
     - gtests
+        - `CMakeLists.txt`
+        - `test.cpp`
     - `readme.md`
+    - src
+        - `file.cpp`
 - data
 - docs
 - `LICENSE`
@@ -15,14 +21,19 @@
 - pico
     - `CMakeLists.txt`
     - examples
+        - `CMakeLists.txt`
+        - `example.cpp`
     - `readme.md`
     - src
+        - `file.cpp`
 - python
     - module
         - `__init__.py`
+        - `file.py`
     - `pyproject.toml`
     - `readme.md`
     - tests
+        `test.py`
 - `readme.md`
 
 
