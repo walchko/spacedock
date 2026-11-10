@@ -19,7 +19,8 @@ classifiers = [
 ]
 
 dependencies = [
-    colorama
+    "colorama",
+    "serial>1.0"
 ]
 
 [project.optional-dependencies]
